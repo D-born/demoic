@@ -42,8 +42,8 @@ pipeline {
         stage('Docker Login') {
             steps {
                 withCredentials([string(credentialsId: 'dockerhubpass', variable: 'PASS')]) {
-                    //bat 'docker login -u routsmaitre -p %PASS%'
-                    bat 'echo %PASS% | docker login -u routsmaitre --password-stdin'
+                    bat 'docker login -u routsmaitre -p %PASS%'
+                    //bat 'echo %PASS% | docker login -u routsmaitre --password-stdin'
                 }
             }
         }
